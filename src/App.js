@@ -2,7 +2,7 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const [notes, setNotes ] = useState([]);
+  const [notes, setNotes] = useState([]);
   const [currentId, setCurrentId] = useState(null);
 
   const handleAddNote = () => {
@@ -16,7 +16,7 @@ function App() {
     setCurrentId(newNote.id);
 
     setNotes((prevNotes) => [newNote, ...prevNotes]);
-      console.log(notes);
+    console.log(notes);
   };
 
   const handleSaveNote = () => {
@@ -32,11 +32,9 @@ function App() {
       <div class="notes-app">
         <ul class="sidebar">
           {notes.map((x) => (
-            <li key = {x.id}
-             class="sidebar-item">
+            <li key={x.id} class="sidebar-item">
               {x.title}
-             </li>
-
+            </li>
           ))}
         </ul>
         <main class="main-content">
@@ -51,7 +49,7 @@ function App() {
               Delete
             </button>
           </div>
-          <h1 key = {currentId}>{currentId}</h1>
+          <h1 key={currentId}>{currentId}</h1>
         </main>
       </div>
     </div>
